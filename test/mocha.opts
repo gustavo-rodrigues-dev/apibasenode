@@ -1,0 +1,5 @@
+--require babel-core/register test/helper
+--reporter spec
+--recursive
+--slow 5000
+--timeout 5000

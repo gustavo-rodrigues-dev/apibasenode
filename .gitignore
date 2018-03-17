@@ -1,0 +1,42 @@
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+### OSX ###
+*.DS_Store
+
+### VisualStudioCode ###
+.vscode/*
+
+### WebStorm ###
+.idea
+
+### SublimeText ###
+*.sublime-workspace
+*.sublime-project
+
+### Node ###
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Package
+package-lock.json
+
+# Optional eslint cache
+.eslintcache
+
+### Project ###
+dist/
