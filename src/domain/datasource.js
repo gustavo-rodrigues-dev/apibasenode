@@ -14,9 +14,9 @@ module.exports = (app) => {
         config.db.username,
         config.db.password,
         {
-            host: config.db.params.host,
-            dialect: config.db.params.dialect,
-            define: config.db.params.define,
+            host: config.db.host,
+            dialect: config.db.dialect,
+            define: config.db.define,
             operatorsAliases: Op,
             logging: (app.config.debug.available)?
                 (msg, queryExecutionTime) => {

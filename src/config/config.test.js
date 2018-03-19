@@ -1,7 +1,7 @@
 const config = {
     debug: {
-        level: 'debug',
-        available: true,
+        level: 'error',
+        available: false,
     },
     db: {
         username: "",

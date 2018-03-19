@@ -1,7 +1,7 @@
 # API Boilerplte
 [![Build Status](https://travis-ci.org/gustavobeavis/apibasenode.svg?branch=master)](https://travis-ci.org/gustavobeavis/apibasenode)
 
-Destina-se para armazenar e fornecer dos participantes nos eventos Natura.
+Code base destruturado para desenvolvimento de APIS seguindo principios de Design de Classes e de objetos.
 
 ## Estrutura
 
