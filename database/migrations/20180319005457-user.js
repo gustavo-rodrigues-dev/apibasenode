@@ -29,9 +29,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       },
-    }).then(data => {
-      console.log(data);
-    }) ;
+    });
   },
   down(queryInterface) {
     return queryInterface.dropTable('users');

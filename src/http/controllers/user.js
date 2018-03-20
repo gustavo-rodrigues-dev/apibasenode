@@ -1,7 +1,6 @@
 import jwt from 'jsonwebtoken';
 module.exports = (app) => {
   const UserRepository = app.domain.repositories.user;
-
   class UserController{
     static login(req, res){
       if (!req.body.email || !req.body.password) {

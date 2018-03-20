@@ -25,8 +25,6 @@ describe('Token route', () => {
             })
             .expect(200)
             .end((err, res) => {
-
-              console.log(err);
                 assert(res.body.token);
                 done(err);
             });

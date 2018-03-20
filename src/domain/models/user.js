@@ -16,8 +16,8 @@ module.exports = function(sequelize, DataTypes) {
       }
   });
 
-  user.associate = (models) => {
+  user.associate = (models) => {};
   user.isPassword = (encPass, pass) => PasswordFactory.compare(pass, encPass);
-  }
+
   return user;
 };

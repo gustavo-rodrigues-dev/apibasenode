@@ -26,6 +26,7 @@ module.exports = (app) => {
         })
     });
     }
+
     static create(name, email, password) {
       return UserModel.findOrCreate({
         where: {
