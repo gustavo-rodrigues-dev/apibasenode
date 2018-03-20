@@ -1,28 +1,23 @@
 import {Model} from 'sequelize';
 import PasswordFactory from '../../lib/auth/password.factory'
 
-module.exports = (sequelize, DataTypes) => {
-  class User extends Model {
-    set password(value) {
-      this.password = PasswordFactory.create(value);
-    }
-
-    static associate(models) {
-
-    }
-
-    static isPassword(encPass, pass){
-      return PasswordFactory.compare(pass, encPass)
-    }
-  }
-  User.init({
+module.exports = function(sequelize, DataTypes) {
+  const user = sequelize.define('user', {
     name: DataTypes.STRING,
     email: DataTypes.STRING,
-    password: DataTypes.STRING,
-  },
-  {
-    sequelize
+    password: DataTypes.STRING
+  }, {
+    tableName: 'user',
+      hooks: {
+          beforeCreate: user => {
+              const newUser = user;
+              newUser.password = PasswordFactory.create(newUser.password);
+          }
+      }
+  });
+
+  user.associate = (models) => {
+  user.isPassword = (encPass, pass) => PasswordFactory.compare(pass, encPass);
   }
-)
-  return User
-}
+  return user;
+};

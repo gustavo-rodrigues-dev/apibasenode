@@ -3,6 +3,8 @@ const config = {
         level: 'debug',
         available: true,
     },
+    secret: 'j~9z{WA1bV?4L:9',
+    jwtSession: { session: false },
     db: {
         username: "",
         password: "",

@@ -2,11 +2,12 @@
 
 module.exports = {
   up(queryInterface, Sequelize) {
-    return queryInterface.createTable('users', {
+    return queryInterface.createTable('user', {
       id: {
+        allowNull: false,
+        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.UUID,
-        defaultValue: Sequelize.UUIDV4,
+        type: Sequelize.INTEGER
       },
       name: {
         allowNull: false,
@@ -28,7 +29,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       },
-    });
+    }).then(data => {
+      console.log(data);
+    }) ;
   },
   down(queryInterface) {
     return queryInterface.dropTable('users');

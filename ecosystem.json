@@ -2,7 +2,7 @@
   "apps" : [
     {
       "name"              : "API boilerplate",
-      "script"            : "index.js",
+      "script"            : "./src/index.js",
       "exec_interpreter"  : "babel-node",
       "exec_mode"         : "fork",
       "error_file"        : "./logs/err.log",

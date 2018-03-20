@@ -1,8 +1,10 @@
 const config = {
     debug: {
         level: 'error',
-        available: false,
+        available: true,
     },
+    secret: 'j~9z{WA1bV?4L:6',
+    jwtSession: { session: false },
     db: {
         username: "",
         password: "",

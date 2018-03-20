@@ -3,7 +3,7 @@ const config = require(`./config.${process.env.NODE_ENV || 'development'}.js`);
 
 module.exports = (app) => {
   const debugTransports =  [
-    new (winston.transports.File)({ filename: '../log/error.log', level: 'error' }),
+    new (winston.transports.File)({ filename: './log/error.log', level: 'error' }),
     new (winston.transports.Console)({
       colorize: true
     })
