@@ -19,6 +19,17 @@
     "coverreport": "nyc report --reporter=lcov",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
+  "nyc": {
+    "exclude": [
+      "test",
+      "dist",
+      "database",
+      "log",
+      "public",
+      "./src/domain",
+      "./src/config"
+    ]
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
