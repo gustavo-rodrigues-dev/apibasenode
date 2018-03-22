@@ -6,3 +6,5 @@ node_js:
   - "9"
 env:
   - NODE_ENV="test"
+after_success:
+- npm run coveralls

@@ -1,7 +1,7 @@
 const config = {
     debug: {
-        level: 'error',
-        available: true,
+        level: 'sily',
+        available: false,
     },
     secret: 'j~9z{WA1bV?4L:6',
     jwtSession: { session: false },
