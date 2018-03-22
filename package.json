@@ -10,6 +10,8 @@
     "migrate": "./node_modules/.bin/sequelize db:migrate",
     "prebuild": "rm -rf ./dist",
     "build": "./node_modules/.bin/babel ./src --out-dir dist/",
+    "prestartbuilded": "./node_modules/.bin/babel ./src --out-dir dist/",
+    "startbuilded": "node ./dist/index.js",
     "debug": "babel-node ./src/index.js --nolazy --inspect-brk=9229",
     "pretest": "rm -f ./database/db.test.sqlite; NODE_ENV=test ./node_modules/.bin/sequelize db:migrate; NODE_ENV=test node_modules/.bin/sequelize db:seed:all",
     "test": "NODE_ENV=test mocha test --exit"
