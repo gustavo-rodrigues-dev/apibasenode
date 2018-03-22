@@ -38,5 +38,11 @@ package-lock.json
 # Optional eslint cache
 .eslintcache
 
+
+### Test ###
+.coveralls.yml
+.nyc_output/
+coverage
+
 ### Project ###
 dist/

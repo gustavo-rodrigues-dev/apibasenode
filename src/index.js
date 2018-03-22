@@ -7,7 +7,7 @@ const app = express();
 consign({
   cwd: path.join(__dirname, ''),
   extensions: [ '.js' ],
-  verbose: true
+  verbose: false
 })
   .include('./config/config.js')
   .then('./domain/datasource.js')
