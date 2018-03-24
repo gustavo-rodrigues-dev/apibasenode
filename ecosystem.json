@@ -3,6 +3,7 @@
     {
       "name"              : "API boilerplate",
       "script"            : "./src/index.js",
+      "watch"             : ["./src"],
       "exec_interpreter"  : "babel-node",
       "exec_mode"         : "fork",
       "error_file"        : "./logs/err.log",

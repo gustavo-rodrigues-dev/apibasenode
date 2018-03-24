@@ -1,6 +1,6 @@
 FROM node:8.9
 ## ARGS ##
-ARG app_env=homolog
+ARG app_env=development
 ARG app_port=3000
 
 ## ENV ##
@@ -16,12 +16,15 @@ COPY . /usr/src/app
 RUN npm cache clear --force
 RUN npm install
 
-## BUILD APP ##
-RUN npm run build
+## RUM MIGRATE DB APP ##
+RUN npm run db:migrate
 
 ## PERMISSION ##
 RUN chown -R node /usr/src/app
 USER node
+
+## BUILD APP ##
+RUN npm run build
 
 ## RUN ##
 EXPOSE $app_port

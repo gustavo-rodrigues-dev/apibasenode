@@ -1,3 +1,4 @@
 # App
 ./dist/*
+./node_modules/*
 ./log/*

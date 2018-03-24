@@ -3,7 +3,9 @@ describe('Index route', () => {
       request.get('/')
           .expect(200)
           .end((err, res) => {
-              const expectedResult = "API on-line";
+              const expectedResult = {
+                status: 'API on-line'
+              };
               assert.deepEqual(res.body, expectedResult);
               done(err);
           });

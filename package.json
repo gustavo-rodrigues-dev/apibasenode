@@ -1,23 +1,32 @@
 {
   "name": "boilerplate-api-express-node",
   "version": "1.0.0",
-  "description": "A",
+  "description": "Api OOD base",
   "main": "index.js",
   "scripts": {
-    "prestart": "NODE_ENV=development ./node_modules/.bin/sequelize db:migrate",
     "start": "babel-node ./src/index.js",
-    "pm2": "pm2 delete ecosystem.json; pm2 startOrReload ecosystem.json --interpreter babel-node",
-    "migrate": "./node_modules/.bin/sequelize db:migrate",
+    "prestartdev": "./node_modules/.bin/pm2 delete ecosystem.json; ",
+    "startdev": "pm2 startOrReload ecosystem.json",
+    "startdev:stop": "./node_modules/.bin/pm2 delete ecosystem.json",
+    "startdev:kill": "./node_modules/.bin/pm2 kill",
+    "db:migrate": "./node_modules/.bin/sequelize db:migrate",
+    "db:migrate:destroy": "./node_modules/.bin/sequelize db:migrate:undo:all",
+    "db:seeder": "./node_modules/.bin/sequelize db:seed:all",
+    "db:seeder:destroy": "./node_modules/.bin/sequelize db:seed:undo:all",
     "prebuild": "rm -rf ./dist",
     "build": "./node_modules/.bin/babel ./src --out-dir dist/",
     "prestartbuilded": "./node_modules/.bin/babel ./src --out-dir dist/",
     "startbuilded": "node ./dist/index.js",
     "debug": "babel-node ./src/index.js --nolazy --inspect-brk=9229",
-    "pretest": "rm -f ./database/db.test.sqlite; NODE_ENV=test ./node_modules/.bin/sequelize db:migrate; NODE_ENV=test node_modules/.bin/sequelize db:seed:all",
-    "test": "NODE_ENV=test mocha test --exit",
+    "pretest": "rm -f ./database/*.test.*; cross-env NODE_ENV=test ./node_modules/.bin/sequelize db:migrate; cross-env NODE_ENV=test node_modules/.bin/sequelize db:seed:all",
+    "test": "cross-env NODE_ENV=test mocha test --exit",
     "cover": "cross-env NODE_ENV=test nyc mocha test --exit",
     "coverreport": "nyc report --reporter=lcov",
-    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
+    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
+    "apidoc": "apidoc -i ./src/http/routes -o ./public/apidoc",
+    "preapidoc:server": "npm run apidoc",
+    "apidoc:server": "./node_modules/.bin/browser-sync start --server \"public/apidoc\"",
+    "clean": "rm -f package-lock.json; rm -rf node_modules"
   },
   "nyc": {
     "exclude": [
@@ -53,18 +62,21 @@
     "winston": "^2.4.0"
   },
   "devDependencies": {
+    "apidoc": "^0.17.6",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
     "babel-eslint": "8.2.2",
     "babel-istanbul": "0.12.2",
     "babel-plugin-istanbul": "4.1.6",
     "babel-register": "6.26.0",
+    "browser-sync": "^2.23.6",
     "coveralls": "3.0.0",
     "cross-env": "5.1.4",
     "eslint": "4.19.1",
     "istanbul": "0.4.5",
     "mocha": "5.0.4",
     "nyc": "11.6.0",
+    "pm2": "^2.10.1",
     "sequelize-cli": "4.0.0",
     "supertest": "3.0.0"
   }

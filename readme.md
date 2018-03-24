@@ -35,12 +35,14 @@ npm install
 ```
 
 ### Build
+Para gerar a versão que será executada pela aplicação
 
 ```bash
 npm build
 ```
 
 ### Teste
+Para execução de testes unitários e funcionais
 
 ```bash
 npm test
@@ -48,6 +50,41 @@ npm test
 
 ### Execução
 
+#### sincrono
+Usoado para startar a aplicação sem observar as mudanças em tempo real.
+
 ```bash
 npm start
+```
+
+#### assincrono
+Usado durante o desenvolvimento para enxergar em tempo real as mudanças sem restartar.
+
+```bash
+npm run startdev
+```
+
+### Documentação
+
+#### Criar
+
+```bash
+npm run apidoc
+```
+#### Visualizar
+
+```bash
+npm run apidoc:server
+```
+
+## DOCKER
+
+### Build
+```bash
+docker build -t apibase -f default.Dockerfile .
+```
+
+### run
+```bash
+docker run -p 3000:3000  apibase
 ```
