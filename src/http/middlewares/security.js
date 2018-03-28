@@ -10,13 +10,7 @@ module.exports = app => {
         jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
     };
 
-    const strategy = new Strategy(params, UserRepository.getUserAuth);
-
-    passport.use(strategy);
-
-    passport.serializeUser((user, done) => done(null, user));
-
-    passport.deserializeUser((user, done) => done(null, user));
+    passport.use(new Strategy(params, UserRepository.getUserAuth));
 
     return {
         init: () => passport.initialize(),
