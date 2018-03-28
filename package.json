@@ -36,7 +36,8 @@
       "log",
       "public",
       "./src/domain",
-      "./src/config"
+      "./src/config",
+      "./src/http/middlewares"
     ]
   },
   "author": "",
