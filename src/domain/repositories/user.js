@@ -8,6 +8,18 @@ module.exports = (app) => {
       return UserModel
     }
 
+    static getUserAuth(user, done){
+      return UserModel.findById(user.id)
+        .then(user => {
+            if (user) {
+                return done(null, user);
+            }
+
+            return done(null, false);
+        })
+        .catch(err => done(err, null));
+    }
+
     static login(email, password){
       return UserModel.findOne({
         where: {

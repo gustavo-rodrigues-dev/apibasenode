@@ -3,24 +3,14 @@ import { Strategy, ExtractJwt } from 'passport-jwt';
 
 module.exports = app => {
 
-    const User = app.domain.datasource.models.user;
+  const UserRepository = app.domain.repositories.user;
     const config = app.config;
     const params = {
         secretOrKey: config.secret,
         jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
     };
 
-    const strategy = new Strategy(params, (payload, done) => {
-        User.findById(payload.id)
-            .then(user => {
-                if (user) {
-                    return done(null, user);
-                }
-
-                return done(null, false);
-            })
-            .catch(err => done(err, null));
-    });
+    const strategy = new Strategy(params, UserRepository.getUserAuth);
 
     passport.use(strategy);
 
