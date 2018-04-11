@@ -23,6 +23,7 @@
     "cover": "cross-env NODE_ENV=test nyc mocha test --exit",
     "coverreport": "nyc report --reporter=lcov",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
+    "coverserver": "nyc report --reporter=lcov; ./node_modules/.bin/browser-sync start --server \"coverage/lcov-report\"/",
     "apidoc": "apidoc -i ./src/http/routes -o ./public/apidoc",
     "preapidoc:server": "npm run apidoc",
     "apidoc:server": "./node_modules/.bin/browser-sync start --server \"public/apidoc\"",
@@ -37,7 +38,7 @@
       "public",
       "./src/domain",
       "./src/config",
-      "./src/http/middlewares"
+      "./src/http/middlewares/security.js"
     ]
   },
   "author": "",

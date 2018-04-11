@@ -33,7 +33,7 @@ module.exports = (app) => {
         })
         .catch(error => {
           app.logger.error('Error on get my info', error);
-          return res.sendStatus(200);
+          return res.sendStatus(500);
         })
     }
   }

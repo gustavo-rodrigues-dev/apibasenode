@@ -9,10 +9,12 @@ module.exports = app => {
         secretOrKey: config.secret,
         jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
     };
-
     passport.use(new Strategy(params, UserRepository.getUserAuth));
+    /* istanbul ignore next */
     passport.serializeUser((user, done) => done(null, user));
+    /* istanbul ignore next */
     passport.deserializeUser((user, done) => done(null, user));
+    /* istanbul ignore next */
     app.use(passport.initialize());
 
     return {
