@@ -24,9 +24,9 @@
     "coverreport": "nyc report --reporter=lcov",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
     "coverserver": "nyc report --reporter=lcov; ./node_modules/.bin/browser-sync start --server \"coverage/lcov-report\"/",
-    "apidoc": "apidoc -i ./src/http/routes -o ./public/apidoc",
+    "apidoc": "apidoc -i ./src/http/routes -o ./docs",
     "preapidoc:server": "npm run apidoc",
-    "apidoc:server": "./node_modules/.bin/browser-sync start --server \"public/apidoc\"",
+    "apidoc:server": "./node_modules/.bin/browser-sync start --server ./docs",
     "clean": "rm -f package-lock.json; rm -rf node_modules"
   },
   "nyc": {
@@ -36,6 +36,7 @@
       "database",
       "log",
       "public",
+      "docs",
       "./src/domain",
       "./src/config",
       "./src/http/middlewares/security.js"
