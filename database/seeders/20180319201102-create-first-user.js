@@ -4,8 +4,7 @@ var moment = require('moment');
 
 module.exports = {
   up: function (queryInterface, Sequelize) {
-    return [
-      queryInterface.bulkInsert('user', [
+    return queryInterface.bulkInsert('user', [
         {
           name: "adm",
           email: "adm@adm.com",
@@ -14,16 +13,14 @@ module.exports = {
           updated_at: moment().format('YYYY-MM-DD h:mm:ss')
         }
       ])
-    ];
+    ;
   },
 
   down: function (queryInterface, Sequelize) {
-    return [
-      queryInterface.bulkDelete('users', [
+    return queryInterface.bulkDelete('user', [
         {
           email: "adm"
         },
-      ])
-    ];
+      ]);
   }
 };

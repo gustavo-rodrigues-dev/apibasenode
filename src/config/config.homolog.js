@@ -1,7 +1,7 @@
 const config = {
   debug: {
       level: 'warn',
-      available: true,
+      available: true
   },
   secret: 'j~9z{WA1bV?4L:1',
   jwtSession: { session: false },
@@ -14,10 +14,10 @@ const config = {
       dialect: "sqlite",
       storage: './database/db.homolog.sqlite',
       sync: {
-          force: true,
+          force: true
       },
       define: {
-          underscored: true,
+          underscored: true
       },
       seederStorage: "json",
       seederStoragePath: "./database/migration.homolog.json"

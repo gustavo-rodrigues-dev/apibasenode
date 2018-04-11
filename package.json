@@ -4,7 +4,7 @@
   "description": "Api OOD base",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node ./src/index.js",
+    "start": "cross-env NODE_ENV=development babel-node ./src/index.js",
     "prestartdev": "./node_modules/.bin/pm2 delete ecosystem.json; ",
     "startdev": "pm2 startOrReload ecosystem.json",
     "startdev:stop": "./node_modules/.bin/pm2 delete ecosystem.json",

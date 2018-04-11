@@ -11,9 +11,11 @@ module.exports = app => {
     };
 
     passport.use(new Strategy(params, UserRepository.getUserAuth));
+    passport.serializeUser((user, done) => done(null, user));
+    passport.deserializeUser((user, done) => done(null, user));
+    app.use(passport.initialize());
 
     return {
-        init: () => passport.initialize(),
         authenticate: () => passport.authenticate('jwt', config.secret),
     };
 };

@@ -8,7 +8,6 @@ module.exports = (app) => {
     if (datasource !== null) return datasource;
     const config = app.config;
     const Op = Sequelize.Op;
-
     const sequelize = new Sequelize(
         config.db.database,
         config.db.username,
@@ -17,7 +16,9 @@ module.exports = (app) => {
             host: config.db.host,
             dialect: config.db.dialect,
             define: config.db.define,
+            storage: config.db.storage,
             operatorsAliases: Op,
+            sync: config.db.sync,
             logging: (app.config.debug.available)?
                 (msg, queryExecutionTime) => {
                     let logData = {

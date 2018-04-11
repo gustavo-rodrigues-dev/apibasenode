@@ -7,13 +7,14 @@ module.exports = function(sequelize, DataTypes) {
     email: DataTypes.STRING,
     password: DataTypes.STRING
   }, {
+    freezeTableName: true,
     tableName: 'user',
-      hooks: {
-          beforeCreate: user => {
-              const newUser = user;
-              newUser.password = PasswordFactory.create(newUser.password);
-          }
-      }
+    hooks: {
+        beforeCreate: user => {
+            const newUser = user;
+            newUser.password = PasswordFactory.create(newUser.password);
+        }
+    }
   });
 
   user.associate = (models) => {};

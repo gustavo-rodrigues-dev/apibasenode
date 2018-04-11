@@ -1,26 +1,23 @@
 const config = {
     debug: {
         level: 'debug',
-        available: true,
+        available: true
     },
     secret: 'j~9z{WA1bV?4L:9',
     jwtSession: { session: false },
     db: {
         username: "",
         password: "",
-        database: "db",
         host: null,
         port: null,
         dialect: "sqlite",
-        storage: './database/db.development.sqlite',
+        storage: "/Users/gustavo/Workspace/edeploy/refs/apiBase/database/db.development.sqlite",
         sync: {
-            force: true,
+            force: true
         },
         define: {
-            underscored: true,
-        },
-        seederStorage: "json",
-        seederStoragePath: "./database/migration.development.json"
+            underscored: true
+        }
     }
 };
 

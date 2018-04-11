@@ -28,15 +28,28 @@ module.exports = (app) => {
     })
     .then(user => {
         return new Promise((resolve, reject) => {
+          if(!user){
+            app.logger.error('user invalid')
+            return reject('user invalid')
+          }
           if (!user || !UserModel.isPassword(user.password, password)) {
             app.logger.error('password invalid')
-            reject('password invalid')
+            return reject('password invalid')
           }
 
           resolve({ id: user.id });
 
         })
-    });
+      });
+    }
+
+    static getById(id){
+      return UserModel.findOne({
+        attributes: ['name', 'email'],
+        where: {
+            id: id
+        }
+      })
     }
 
     static create(name, email, password) {

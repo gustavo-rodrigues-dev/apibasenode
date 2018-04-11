@@ -19,11 +19,23 @@ module.exports = (app) => {
             });
         })
         .catch(error => {
+          app.logger.warn('Invalid user', error);
           return res.sendStatus(401);
         })
     }
 
-
+    static getMyInfo(req, res){
+      return UserRepository.getById(req.user.id)
+        .then(user => {
+          return res
+            .status(200)
+            .json(user);
+        })
+        .catch(error => {
+          app.logger.error('Error on get my info', error);
+          return res.sendStatus(200);
+        })
+    }
   }
 
   return UserController;
