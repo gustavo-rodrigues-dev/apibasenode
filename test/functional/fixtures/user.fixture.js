@@ -14,7 +14,6 @@ export function validateTable() {
   return app.domain.datasource.sequelize.queryInterface.renameColumn(User.getTableName(), 'invalidate', 'name');
 }
 
-
 export function createUser() {
   return User.create({
       name: 'test',

@@ -27,7 +27,8 @@
     "apidoc": "apidoc -i ./src/http/routes -o ./docs",
     "preapidoc:server": "npm run apidoc",
     "apidoc:server": "./node_modules/.bin/browser-sync start --server ./docs",
-    "clean": "rm -f package-lock.json; rm -rf node_modules"
+    "clean": "rm -f package-lock.json; rm -rf node_modules",
+    "lint": "eslint --fix"
   },
   "nyc": {
     "exclude": [
@@ -76,6 +77,11 @@
     "coveralls": "3.0.0",
     "cross-env": "5.1.4",
     "eslint": "4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
     "istanbul": "0.4.5",
     "mocha": "5.1.0",
     "nyc": "11.6.0",
