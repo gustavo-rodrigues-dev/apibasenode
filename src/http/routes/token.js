@@ -1,5 +1,5 @@
 module.exports = app => {
-  const UserController = app.http.controllers.user;
+  const UserController = app.http.controllers.user
   /**
    * @api {post} /token Get a Token
    * @apiGroup Athorization
@@ -22,5 +22,5 @@ module.exports = app => {
    * @apiErrorExample {json} Invalid parameters
    *    HTTP/1.1 400 Bad Request
    */
-  app.post('/token', UserController.login);
-};
+  app.post('/token', UserController.login)
+}

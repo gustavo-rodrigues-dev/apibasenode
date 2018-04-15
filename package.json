@@ -18,8 +18,9 @@
     "prestartbuilded": "./node_modules/.bin/babel ./src --out-dir dist/",
     "startbuilded": "node ./dist/index.js",
     "debug": "babel-node ./src/index.js --nolazy --inspect-brk=9229",
-    "pretest": "rm -f ./database/*.test.*; cross-env NODE_ENV=test ./node_modules/.bin/sequelize db:migrate; cross-env NODE_ENV=test node_modules/.bin/sequelize db:seed:all",
+    "pretest": "rm -f ./database/*.test.*; npm run build;cross-env NODE_ENV=test ./node_modules/.bin/sequelize db:migrate; cross-env NODE_ENV=test node_modules/.bin/sequelize db:seed:all",
     "test": "cross-env NODE_ENV=test mocha test --exit",
+    "postest":"npm run clean:build",
     "cover": "cross-env NODE_ENV=test nyc mocha test --exit",
     "coverreport": "nyc report --reporter=lcov",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
@@ -28,7 +29,9 @@
     "preapidoc:server": "npm run apidoc",
     "apidoc:server": "./node_modules/.bin/browser-sync start --server ./docs",
     "clean": "rm -f package-lock.json; rm -rf node_modules",
-    "lint": "eslint --fix"
+    "clean:build": "rm -rf dist/",
+    "lint": "eslint src/**/**/*.js src/**/*.js src/*.js  database/**/*.js test/**/**/*.js test/*.js",
+    "lint:fix": "eslint src/**/**/*.js src/**/*.js src/*.js  database/**/*.js test/**/**/*.js test/*.js --fix"
   },
   "nyc": {
     "exclude": [

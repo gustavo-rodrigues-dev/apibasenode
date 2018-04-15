@@ -1,5 +1,5 @@
 module.exports = app => {
-  const indexDontroller = app.http.controllers.index;
+  const indexDontroller = app.http.controllers.index
 
   /**
    * @api {get} / API Status
@@ -11,5 +11,5 @@ module.exports = app => {
    *      "status": "API on-line"
    *    }
    */
-  app.get('/', indexDontroller.wellcome);
-};
+  app.get('/', indexDontroller.wellcome)
+}

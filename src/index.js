@@ -1,8 +1,8 @@
-import express from 'express';
-import consign from 'consign';
-const path = require('path');
+import express from 'express'
+import consign from 'consign'
+const path = require('path')
 
-const app = express();
+const app = express()
 
 consign({
   cwd: path.join(__dirname, ''),
@@ -16,6 +16,6 @@ consign({
   .then('./http/controllers')
   .then('./http/routes/')
   .then('boot.js')
-  .into(app);
+  .into(app)
 
-module.exports = app;
+module.exports = app

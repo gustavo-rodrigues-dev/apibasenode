@@ -1,62 +1,63 @@
-import { resolve } from "url";
+import { resolve } from 'url'
 
 module.exports = (app) => {
-  const UserModel = app.domain.datasource.models.user;
+  const UserModel = app.domain.datasource.models.user
 
   class UserRepository {
-    static getModel(){
+    static getModel () {
       return UserModel
     }
 
-    static getUserAuth(user, done){
+    static getUserAuth (user, done) {
       return UserModel.findById(user.id)
         .then(user => {
-            if (user) {
-                return done(null, user);
-            }
+          if (user) {
+            return done(null, user)
+          }
 
-            return done(null, false);
+          return done(null, false)
         })
-        .catch(err => done(err, null));
+        .catch(err => done(err, null))
     }
 
-    static login(email, password){
+    static validateUser (user, password) {
+      return new Promise((resolve, reject) => {
+        if (!user) {
+          app.logger.error('user invalid')
+          return reject(new Error('user invalid'))
+        }
+        if (!UserModel.isPassword(user.password, password)) {
+          app.logger.error('password invalid')
+          return reject(new Error('password invalid'))
+        }
+
+        return resolve({ id: user.id })
+      })
+    }
+
+    static login (email, password) {
       return UserModel.findOne({
         where: {
-            email
-        },
-    })
-    .then(user => {
-        return new Promise((resolve, reject) => {
-          if(!user){
-            app.logger.error('user invalid')
-            return reject('user invalid')
-          }
-          if (!user || !UserModel.isPassword(user.password, password)) {
-            app.logger.error('password invalid')
-            return reject('password invalid')
-          }
-
-          resolve({ id: user.id });
-
-        })
-      });
+          email
+        }
+      })
+        .then(user => this.validateUser(user, password))
     }
 
-    static getById(id){
+    static getById (id) {
       return UserModel.findOne({
         attributes: ['name', 'email'],
         where: {
-            id: id
+          id: id
         }
       })
     }
 
-    static create(name, email, password) {
+    static create (name, email, password) {
       return UserModel.findOrCreate({
         where: {
           name: name,
-          email: email,
+          email: email
         },
         defaults: {
           name: name,
@@ -64,14 +65,14 @@ module.exports = (app) => {
           password: password
         }
       }).spread((user, created) => {
-        if(created){
-          throw new Error('User exists');
+        if (created) {
+          throw new Error('User exists')
         }
 
-        return user;
-      });
+        return user
+      })
     }
   }
 
-  return UserRepository;
+  return UserRepository
 }

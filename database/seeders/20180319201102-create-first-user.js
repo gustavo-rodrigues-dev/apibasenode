@@ -3,7 +3,7 @@ var PasswordFactory = require('../../src/lib/auth/password.factory')
 var moment = require('moment')
 
 module.exports = {
-  up: function (queryInterface, Sequelize) {
+  up: function (queryInterface) {
     return queryInterface.bulkInsert('user', [
       {
         name: 'adm',
@@ -15,7 +15,7 @@ module.exports = {
     ])
   },
 
-  down: function (queryInterface, Sequelize) {
+  down: function (queryInterface) {
     return queryInterface.bulkDelete('user', [
       {
         email: 'adm'
