@@ -2,7 +2,13 @@
   "name": "boilerplate-api-express-node",
   "version": "1.0.0",
   "description": "Api OOD base",
-  "main": "index.js",
+  "author": "Gustavo S. Rodrigues <gustavo.beavis@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/gustavobeavis/apibasenode",
+  "main": "./dist/index.js",
+  "engines": {
+    "node": ">=6.9.0"
+  },
   "scripts": {
     "start": "cross-env NODE_ENV=development babel-node ./src/index.js",
     "prestartdev": "./node_modules/.bin/pm2 delete ecosystem.json; ",
@@ -47,8 +53,6 @@
       "./src/http/middlewares/security.js"
     ]
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-3": "^6.24.1",
