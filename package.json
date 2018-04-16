@@ -24,7 +24,7 @@
     "cover": "cross-env NODE_ENV=test nyc mocha test --exit",
     "coverreport": "nyc report --reporter=lcov",
     "precoveralls": "mkdir coverage",
-    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
+    "coveralls": "npm run cover -- --report lcovonly;npm run coverreport; cat ./coverage/lcov.info | coveralls",
     "coverserver": "nyc report --reporter=lcov; ./node_modules/.bin/browser-sync start --server \"coverage/lcov-report\"/",
     "apidoc": "apidoc -i ./src/http/routes -o ./docs",
     "preapidoc:server": "npm run apidoc",
