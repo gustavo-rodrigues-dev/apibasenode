@@ -5,6 +5,7 @@ const config = {
   },
   secret: 'j~9z{WA1bV?4L:1',
   jwtSession: { session: false },
+  port: 3000,
   db: {
     username: '',
     password: '',

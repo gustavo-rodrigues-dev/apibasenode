@@ -2,7 +2,7 @@ module.exports = app => {
   const UserController = app.http.controllers.user
 
   app.route('/user')
-    .all(app.http.middlewares.security.authenticate())
+    .all(app.http.middlewares.jwt.authenticate())
   /**
    * @api {get} /user Fetch current user data
    * @apiGroup User
