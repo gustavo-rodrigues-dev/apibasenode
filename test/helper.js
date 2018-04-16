@@ -1,6 +1,6 @@
 import assert from 'assert'
 import supertest from 'supertest'
-import app from '../dist/index'
+import app from '../src/index'
 
 global.app = app
 global.assert = assert
