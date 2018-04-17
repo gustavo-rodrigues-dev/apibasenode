@@ -166,3 +166,11 @@ docker build -t apibase -f default.Dockerfile .
 ```bash
 docker run -p 3000:3000  apibase
 ```
+
+## Referências
+- [Documentação do projeto](https://github.com/gustavobeavis/apibasenode/wiki)
+- [Documentação da API](https://gustavobeavis.github.io/apibasenode/)
+
+## License
+
+  [MIT](LICENSE)
