@@ -27,23 +27,42 @@ Esse projeto consiste em estandarizar algumas das melhores praticas de design de
     - functional
     - unit
     
-### config
+### database/migrations
+Pasta destinada as Database Migrations que nos permitem controlar a versão do banco de dados, evitando a necessidade de escrever scripts SQL diretamente e executá-los em ferramentas de administração. Com as Database Migrations (ou Schema Migrations), alterações incrementais nas bases de dados são feitas de forma gerenciada. 
+
+no caso do Sequelize que é a lib default, a referência de codificação é essa:
+http://docs.sequelizejs.com/manual/tutorial/migrations.html#creating-first-model-and-migration- 
+
+### database/seeders
+Assim como a migrations, também servem para inserções incrementais no banco, mas ao invés de estrutura, os seeders são destinados a dados pelos quais queremos inserir, como cargas iniciais.
+
+No caso do Sequelize, que é o ORM default do projeto, a referência de como usar é essa:
+http://docs.sequelizejs.com/manual/tutorial/migrations.html#creating-first-seed
+  
+### src/config
 Pasta onde estão armazenada todas as configurações do sistema, independente de seu ambiente.
 
-### http/controllers
-Pasta onde estão implementada todas as regras de negócio da aplicação, que servem de intermédio entre a camada de dados e a camada de apresentação.
-
-### http/middlewares
-Nessa pasta estão todos os middlewares do projeto, ou seja todos os intermediários entre a requisição e a resposta de uma requisição, nelas estão definidas dês de configurações de retorno do json, até filtros ou checagem de autenticação.
-
-### domain/models
+### src/domain/models
 Nessa camada estão contidas todos as models do sistema, unitariamente. Caso você use mais de uma modalidade de banco de dados, recomendo que crie pastas para cada tipo 
 
-### domain/repositories
+### src/domain/repositories
 Nessa camada estarão armazenada todas as consultas e regras relacionadas a busca e inserção de dados, ela fará o intermédio entre o controller e a camada de dados, de modo quem implementa a regra de persitência ou mesmo de consulta de dados seja feita no repositório e não na model ou controller.
 
-### http/routes
+### src/http/controllers
+Pasta onde estão implementada todas as regras de negócio da aplicação, que servem de intermédio entre a camada de dados e a camada de apresentação.
+
+### src/http/middlewares
+Nessa pasta estão todos os middlewares do projeto, ou seja todos os intermediários entre a requisição e a resposta de uma requisição, nelas estão definidas dês de configurações de retorno do json, até filtros ou checagem de autenticação.
+
+### src/http/routes
 Sessão onde serão implementadas todas as rotas do sistema, elas deverão ser previamente abstraídas nos seus controllers correspondentes. A vantagem de separar a router do controller é a opção de reuso de controladores além de permitir a documentação da API sem poluir a camada de controller (sweeger, APIdoc, etc).
+
+### test/functional
+Sessão responsável por conter todos os testes de integração, ou seja, os testes das rotas propriamente ditas, por ser um projeto BDD, nessa sessão recomenda-se um arquivo por arquivo de rota, de modo que você implemente o teste de todos ou dos principais comportamentos por rota.
+
+### test/unit
+Área responsável por conter todos os testes unitários do projeto, ou seja, todas as classes e funções utilitárias de modo individual. 
+*Obs*: Recomendo que nunca teste um dominio, um controlador ou rota nessa sessão, teste apenas arquivos indepodentes e auto contidos, pois toda a parte de domínio e controle já será implicitamente usado no teste funcional.
 
 ## Configuração de ambiente
 
