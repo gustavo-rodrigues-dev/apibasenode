@@ -5,7 +5,7 @@
 [![Daviid Dependencies](https://david-dm.org/gustavobeavis/apibasenode/dev-status.svg)](https://david-dm.org/gustavobeavis/apibasenode?type=dev)
 [![Known Vulnerabilities](https://snyk.io/test/github/gustavobeavis/apibasenode/badge.svg?targetFile=package.json)](https://snyk.io/test/github/gustavobeavis/apibasenode?targetFile=package.json)
 
-Code base destruturado para desenvolvimento de APIS seguindo principios de Design de Classes e de objetos.
+Esse projeto consiste em estandarizar algumas das melhores praticas de design de projeto relacionados a API REST, onde o propósito é reforçar a divisão de responsabilidades de sistema, dividindo-os em sessões responsáveis por cada escopo, de modo que se melhores a manutenciabilidade e também se repita menos código. Em uma visão geral, esse bilerplate tem o intuíto de prover um projeto basico respeitando os principios de qualidade e de divisão de responábilidades da aplicação, além de testes unitários e de integração.
 
 ## Estrutura
 
@@ -26,21 +26,50 @@ Code base destruturado para desenvolvimento de APIS seguindo principios de Desig
 - test
     - functional
     - unit
+    
+### config
+Pasta onde estão armazenada todas as configurações do sistema, independente de seu ambiente.
 
+### http/controllers
+Pasta onde estão implementada todas as regras de negócio da aplicação, que servem de intermédio entre a camada de dados e a camada de apresentação.
+
+### http/middlewares
+Nessa pasta estão todos os middlewares do projeto, ou seja todos os intermediários entre a requisição e a resposta de uma requisição, nelas estão definidas dês de configurações de retorno do json, até filtros ou checagem de autenticação.
+
+### domain/models
+Nessa camada estão contidas todos as models do sistema, unitariamente. Caso você use mais de uma modalidade de banco de dados, recomendo que crie pastas para cada tipo 
+
+### domain/repositories
+Nessa camada estarão armazenada todas as consultas e regras relacionadas a busca e inserção de dados, ela fará o intermédio entre o controller e a camada de dados, de modo quem implementa a regra de persitência ou mesmo de consulta de dados seja feita no repositório e não na model ou controller.
+
+### http/routes
+Sessão onde serão implementadas todas as rotas do sistema, elas deverão ser previamente abstraídas nos seus controllers correspondentes. A vantagem de separar a router do controller é a opção de reuso de controladores além de permitir a documentação da API sem poluir a camada de controller (sweeger, APIdoc, etc).
 
 ## Configuração de ambiente
 
 ### Instalação
+Para Instalar todas as dependências do projeto
 
 ```bash
 npm install
+```
+
+Para rodar todas as migrations
+```bash
+npm run db:migrate
+```
+
+
+Para rodar todos os seeders
+```bash
+npm run db:seeder
 ```
 
 ### Build
 Para gerar a versão que será executada pela aplicação
 
 ```bash
-npm build
+npm run build
 ```
 
 ### Teste
@@ -48,6 +77,24 @@ Para execução de testes unitários e funcionais
 
 ```bash
 npm test
+```
+
+Para verificar a cobertura de teste
+```bash
+npm run cover
+```
+
+### lint
+Para verificar se o código está dentro do padrão standard js
+
+```bash
+npm run lint
+```
+
+Para verificar e corrigir automaticamente para o padrão standard js, caso não corrija ele aponta onde deve ajustar
+
+```bash
+npm run lint:fix
 ```
 
 ### Execução
@@ -64,6 +111,35 @@ Usado durante o desenvolvimento para enxergar em tempo real as mudanças sem res
 
 ```bash
 npm run startdev
+```
+
+#### modo debug
+Caso queira depurar enquanto desenvolve
+
+```bash
+npm run debug
+```
+
+Caso você use [VSCode](https://code.visualstudio.com/docs/editor/debugging) você pode usar a configuração abaixo e depurar em tempo de execução.
+
+[.vscode/launch.json](https://gist.github.com/gustavobeavis/c608dd0373776d4e4f25bbcb1f2a22de)
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch via NPM",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "debug"
+      ],
+      "port": 9229
+    }
+  ]
+}
 ```
 
 ### Documentação
