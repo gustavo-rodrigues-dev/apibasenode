@@ -1,4 +1,4 @@
-# API Boilerplte
+# API Boilerplate
 [![Build Status](https://travis-ci.org/gustavobeavis/apibasenode.svg?branch=master)](https://travis-ci.org/gustavobeavis/apibasenode)
 [![Coverage Status](https://coveralls.io/repos/github/gustavobeavis/apibasenode/badge.svg?branch=master)](https://coveralls.io/github/gustavobeavis/apibasenode?branch=master)
 [![Daviid Dependencies](https://david-dm.org/gustavobeavis/apibasenode.svg)](https://david-dm.org/gustavobeavis/apibasenode)
