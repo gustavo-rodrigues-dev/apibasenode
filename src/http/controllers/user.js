@@ -31,10 +31,6 @@ module.exports = (app) => {
             .status(200)
             .json(user)
         })
-        .catch(error => {
-          app.logger.error('Error on get my info', error)
-          return res.sendStatus(500)
-        })
     }
   }
 
