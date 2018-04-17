@@ -47,3 +47,4 @@ coverage
 ### Project ###
 dist/
 public/
+database/*.sqlite
