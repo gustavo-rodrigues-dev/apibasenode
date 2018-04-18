@@ -2,7 +2,7 @@ module.exports = app => {
   const healthDontroller = app.http.controllers.health
 
   /**
-   * @api {get} /health Fetch current user data
+   * @api {get} /health Health Check API
    * @apiGroup Health
    * @apiSuccessExample {json} Success
    *    HTTP/1.1 200 OK
@@ -10,7 +10,7 @@ module.exports = app => {
    *      status: 200,
    *      message: 'success on conect services'
    *    }
-   * @apiErrorExample {json} server error error
+   * @apiErrorExample {json} Internal server error
    *    HTTP/1.1 500 Internal server error
    *    {
    *      status: 500,
