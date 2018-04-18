@@ -12,7 +12,7 @@
   "scripts": {
     "start": "babel-node ./src/index.js",
     "prestart:dev": "./node_modules/.bin/pm2 delete ecosystem.json; ",
-    "start:dev": "pm2 startOrReload ecosystem.json",
+    "start:dev": "pm2 startOrReload --no-daemon ecosystem.json",
     "start:dev:stop": "./node_modules/.bin/pm2 delete ecosystem.json",
     "start:dev:kill": "./node_modules/.bin/pm2 kill",
     "prestart:builded": "npm run build",

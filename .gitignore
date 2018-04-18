@@ -48,3 +48,4 @@ coverage
 dist/
 public/
 database/*.sqlite
+postgres-data/*

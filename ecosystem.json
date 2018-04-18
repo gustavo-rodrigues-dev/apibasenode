@@ -8,7 +8,8 @@
       "exec_mode"         : "fork",
       "error_file"        : "./logs/err.log",
       "out_file"          : "./logs/out.log",
-      "log_date_format"   : "YYYY-MM-DD HH:mm Z"
+      "log_date_format"   : "YYYY-MM-DD HH:mm Z",
+      "node_args": ["--nolazy", "--inspect=0.0.0.0:9229"]
     }
   ]
 }

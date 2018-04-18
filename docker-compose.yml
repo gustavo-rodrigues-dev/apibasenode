@@ -18,6 +18,8 @@ services:
     ports:
       - 9229:9229
       - 3000:3000
+    volumes:
+      - ./src:/usr/src/app/src
     depends_on:
       - postgres
   postgres:
@@ -30,3 +32,5 @@ services:
       POSTGRES_DB: db
       TZ: "America/Sao_Paulo"
     restart: unless-stopped
+    volumes:
+      - ./postgres-data:/var/lib/postgresql
