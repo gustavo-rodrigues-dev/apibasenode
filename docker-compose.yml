@@ -1,0 +1,32 @@
+version: '3.4'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: default.Dockerfile
+    container_name: app
+    environment:
+      - NODE_ENV=development
+      - APP_PORT=3000
+      - PG_USER_NAME=pguser
+      - PG_PASS=pguser
+      - PG_DB=db
+      - PG_SCHEMA=public
+      - PG_HOST=postgres
+      - PG_PORT=5432
+    ports:
+      - 9229:9229
+      - 3000:3000
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: pguser
+      POSTGRES_DB: db
+      TZ: "America/Sao_Paulo"
+    restart: unless-stopped
