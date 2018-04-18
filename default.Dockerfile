@@ -27,12 +27,12 @@ EXPOSE $app_port
 EXPOSE $app_debug_port
 
 ## RUN DEBUG MODE ##
-# CMD npm run db:migrate; npm run debug
+# CMD npm run debug
 
 ## RUN DEV WATCH WITH DEBUG ##
-CMD npm run db:migrate; npm run start:dev
+CMD npm run start:dev
 
 ## RUN DIST ##
-# CMD npm run db:migrate; node ./dist/index.js
+# CMD node ./dist/index.js
 
 

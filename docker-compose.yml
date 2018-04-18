@@ -33,4 +33,6 @@ services:
       TZ: "America/Sao_Paulo"
     restart: unless-stopped
     volumes:
-      - ./postgres-data:/var/lib/postgresql
+      - ./postgres-data:/var/lib/postgresql/data
+volumes:
+  postgres-data:
