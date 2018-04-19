@@ -21,18 +21,16 @@ RUN npm install
 RUN npm run build
 
 ## EXPOSE APP PORT ##
-EXPOSE $app_port
+# EXPOSE $app_port
 
 ## EXPOSE DEBUG PORT ## - WHEN YOU RUN DEBUG MODE
-EXPOSE $app_debug_port
+# EXPOSE $app_debug_port
 
 ## RUN DEBUG MODE ##
 # CMD npm run debug
 
-## RUN DEV WATCH WITH DEBUG ##
-CMD npm run start:dev
-
 ## RUN DIST ##
 # CMD node ./dist/index.js
 
-
+## RUN DEV WATCH WITH DEBUG ##
+CMD npm run start:dev

@@ -1,11 +1,21 @@
 version: '3.4'
 
 services:
-  app:
+  nginx:
+    image: nginx
+    ports:
+      - 8080:8080
+    restart: always
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx.api.conf:/etc/nginx/conf.d/api.conf
+    depends_on:
+      - api
+  api:
     build:
       context: .
       dockerfile: default.Dockerfile
-    container_name: app
+    container_name: api
     environment:
       - NODE_ENV=development
       - APP_PORT=3000
@@ -22,6 +32,7 @@ services:
       - ./src:/usr/src/app/src
     depends_on:
       - postgres
+    restart: always
   postgres:
     image: postgres
     ports:
@@ -31,7 +42,7 @@ services:
       POSTGRES_PASSWORD: pguser
       POSTGRES_DB: db
       TZ: "America/Sao_Paulo"
-    restart: unless-stopped
+    restart: always
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
 volumes:
