@@ -21,7 +21,7 @@ RUN npm install
 RUN npm run build
 
 ## EXPOSE APP PORT ##
-# EXPOSE $app_port
+EXPOSE $app_port
 
 ## EXPOSE DEBUG PORT ## - WHEN YOU RUN DEBUG MODE
 # EXPOSE $app_debug_port

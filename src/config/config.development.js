@@ -1,6 +1,6 @@
 const config = {
   debug: {
-    level: 'sily',
+    level: 'debug',
     available: true
   },
   secret: 'j~9z{WA1bV?4L:9',

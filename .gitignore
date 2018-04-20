@@ -44,8 +44,12 @@ package-lock.json
 .nyc_output/
 coverage
 
-### Project ###
+### Project Code ###
 dist/
 public/
 database/*.sqlite
+
+### Project Server Dependencies
 postgres-data/*
+
+

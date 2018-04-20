@@ -7,8 +7,8 @@ services:
       - 8080:8080
     restart: always
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
-      - ./nginx.api.conf:/etc/nginx/conf.d/api.conf
+      - ./server/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./server/nginx/nginx.api.conf:/etc/nginx/conf.d/api.conf
     depends_on:
       - api
   api:
@@ -44,6 +44,6 @@ services:
       TZ: "America/Sao_Paulo"
     restart: always
     volumes:
-      - ./postgres-data:/var/lib/postgresql/data
+      - ./postgres-data:/var/lib/postgresql/data:rw
 volumes:
   postgres-data:
