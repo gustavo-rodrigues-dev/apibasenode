@@ -1,0 +1,1248 @@
+{
+	"id": "0808e528-9d5a-a4a3-1158-48ac0a38e861",
+	"name": "apiBase",
+	"allTests": [],
+	"timestamp": 1524201805727,
+	"collection_id": "777a6577-70c5-e275-b1d0-29ba5d4c4942",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "6ef127df-55b9-e7d0-e872-19f77c532f9b",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "777a6577-70c5-e275-b1d0-29ba5d4c4942",
+		"name": "apiBase",
+		"description": "",
+		"order": [
+			"a29c2fe9-23db-19e1-500b-1451694b40a3",
+			"591a6ccd-b89b-c6fa-2601-5ff6bcb32b23",
+			"83c38a7b-ae69-5e85-553f-a5317a699f2d",
+			"86176552-80ce-6799-29ad-f363fc7f1cb8"
+		],
+		"folders": [],
+		"folders_order": [],
+		"requests": [
+			{
+				"id": "591a6ccd-b89b-c6fa-2601-5ff6bcb32b23",
+				"headers": "Authorization:  {{TOKEN}}\n",
+				"headerData": [
+					{
+						"key": "Authorization",
+						"value": " {{TOKEN}}",
+						"description": "",
+						"enabled": true
+					}
+				],
+				"url": "{{URL}}/user",
+				"queryParams": [],
+				"preRequestScript": "",
+				"pathVariables": {},
+				"pathVariableData": [],
+				"method": "GET",
+				"data": null,
+				"dataMode": "params",
+				"tests": null,
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1524198382950,
+				"name": "{{URL}}/user",
+				"description": "Rota responsável por retornar os dados do usuário",
+				"collectionId": "777a6577-70c5-e275-b1d0-29ba5d4c4942",
+				"responses": [
+					{
+						"status": "",
+						"responseCode": {
+							"code": 200,
+							"name": "OK"
+						},
+						"time": 70,
+						"headers": [
+							{
+								"name": "access-control-allow-origin",
+								"key": "access-control-allow-origin",
+								"value": "*",
+								"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+							},
+							{
+								"name": "connection",
+								"key": "connection",
+								"value": "keep-alive",
+								"description": "Options that are desired for the connection"
+							},
+							{
+								"name": "content-length",
+								"key": "content-length",
+								"value": "49",
+								"description": "The length of the response body in octets (8-bit bytes)"
+							},
+							{
+								"name": "content-type",
+								"key": "content-type",
+								"value": "application/json; charset=utf-8",
+								"description": "The mime type of this content"
+							},
+							{
+								"name": "date",
+								"key": "date",
+								"value": "Fri, 20 Apr 2018 04:16:08 GMT",
+								"description": "The date and time that the message was sent"
+							},
+							{
+								"name": "etag",
+								"key": "etag",
+								"value": "W/\"31-/XNvnXH0THeWES57Y6QjNGHVmpM\"",
+								"description": "An identifier for a specific version of a resource, often a message digest"
+							},
+							{
+								"name": "server",
+								"key": "server",
+								"value": "nginx/1.13.12",
+								"description": "A name for the server"
+							},
+							{
+								"name": "strict-transport-security",
+								"key": "strict-transport-security",
+								"value": "max-age=15552000; includeSubDomains, max-age=31536000; includeSubDomains",
+								"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+							},
+							{
+								"name": "x-content-type-options",
+								"key": "x-content-type-options",
+								"value": "nosniff",
+								"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+							},
+							{
+								"name": "x-dns-prefetch-control",
+								"key": "x-dns-prefetch-control",
+								"value": "off",
+								"description": "Custom header"
+							},
+							{
+								"name": "x-download-options",
+								"key": "x-download-options",
+								"value": "noopen",
+								"description": "Custom header"
+							},
+							{
+								"name": "x-frame-options",
+								"key": "x-frame-options",
+								"value": "SAMEORIGIN",
+								"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+							},
+							{
+								"name": "x-xss-protection",
+								"key": "x-xss-protection",
+								"value": "1; mode=block",
+								"description": "Cross-site scripting (XSS) filter"
+							}
+						],
+						"cookies": [],
+						"mime": "",
+						"text": "{\n    \"name\": \"adm\",\n    \"email\": \"adm@adm.com\"\n}",
+						"language": "json",
+						"rawDataType": "text",
+						"previewType": "text",
+						"searchResultScrolledTo": -1,
+						"forceNoPretty": false,
+						"write": true,
+						"empty": false,
+						"failed": false,
+						"id": "03d800cd-6c74-e1ff-430d-5948162d1c84",
+						"name": "SUCCESS",
+						"isSample": true,
+						"scrollToResult": false,
+						"runTests": false,
+						"request": {
+							"url": "{{URL}}/user",
+							"pathVariables": {},
+							"pathVariableData": [],
+							"queryParams": [],
+							"headerData": [
+								{
+									"key": "Authorization",
+									"value": "{{TOKEN}}",
+									"enabled": true,
+									"description": ""
+								}
+							],
+							"headers": "Authorization: {{TOKEN}}\n",
+							"data": null,
+							"method": "GET",
+							"dataMode": "params"
+						}
+					},
+					{
+						"status": "",
+						"responseCode": {
+							"code": 401,
+							"name": "Unauthorized"
+						},
+						"time": 35,
+						"headers": [
+							{
+								"name": "access-control-allow-origin",
+								"key": "access-control-allow-origin",
+								"value": "*",
+								"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+							},
+							{
+								"name": "connection",
+								"key": "connection",
+								"value": "keep-alive",
+								"description": "Options that are desired for the connection"
+							},
+							{
+								"name": "content-length",
+								"key": "content-length",
+								"value": "12",
+								"description": "The length of the response body in octets (8-bit bytes)"
+							},
+							{
+								"name": "date",
+								"key": "date",
+								"value": "Fri, 20 Apr 2018 04:18:36 GMT",
+								"description": "The date and time that the message was sent"
+							},
+							{
+								"name": "server",
+								"key": "server",
+								"value": "nginx/1.13.12",
+								"description": "A name for the server"
+							},
+							{
+								"name": "strict-transport-security",
+								"key": "strict-transport-security",
+								"value": "max-age=15552000; includeSubDomains",
+								"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+							},
+							{
+								"name": "x-content-type-options",
+								"key": "x-content-type-options",
+								"value": "nosniff",
+								"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+							},
+							{
+								"name": "x-dns-prefetch-control",
+								"key": "x-dns-prefetch-control",
+								"value": "off",
+								"description": "Custom header"
+							},
+							{
+								"name": "x-download-options",
+								"key": "x-download-options",
+								"value": "noopen",
+								"description": "Custom header"
+							},
+							{
+								"name": "x-frame-options",
+								"key": "x-frame-options",
+								"value": "SAMEORIGIN",
+								"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+							},
+							{
+								"name": "x-xss-protection",
+								"key": "x-xss-protection",
+								"value": "1; mode=block",
+								"description": "Cross-site scripting (XSS) filter"
+							}
+						],
+						"cookies": [],
+						"mime": "",
+						"text": "Unauthorized",
+						"language": "plainText",
+						"rawDataType": "text",
+						"previewType": "text",
+						"searchResultScrolledTo": -1,
+						"forceNoPretty": false,
+						"write": true,
+						"empty": false,
+						"failed": false,
+						"id": "f74fa7fd-9c32-3db5-f1e4-bb59b979dccb",
+						"name": "Unauthorized",
+						"isSample": true,
+						"scrollToResult": false,
+						"runTests": false,
+						"request": {
+							"url": "{{URL}}/user",
+							"pathVariables": {},
+							"pathVariableData": [],
+							"queryParams": [],
+							"headerData": [
+								{
+									"key": "Authorization",
+									"value": "AAAA",
+									"enabled": true,
+									"description": ""
+								}
+							],
+							"headers": "Authorization: AAAA\n",
+							"data": null,
+							"method": "GET",
+							"dataMode": "params"
+						}
+					}
+				]
+			},
+			{
+				"id": "83c38a7b-ae69-5e85-553f-a5317a699f2d",
+				"headers": "",
+				"headerData": [],
+				"url": "{{URL}}/health",
+				"queryParams": [],
+				"preRequestScript": "",
+				"pathVariables": {},
+				"pathVariableData": [],
+				"method": "GET",
+				"data": null,
+				"dataMode": "params",
+				"tests": null,
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1524198380107,
+				"name": "{{URL}}/health",
+				"description": "Rota responsável por checar status do serviço",
+				"collectionId": "777a6577-70c5-e275-b1d0-29ba5d4c4942",
+				"responses": [
+					{
+						"status": "",
+						"responseCode": {
+							"code": 200,
+							"name": "OK"
+						},
+						"time": 103,
+						"headers": [
+							{
+								"name": "access-control-allow-origin",
+								"key": "access-control-allow-origin",
+								"value": "*",
+								"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+							},
+							{
+								"name": "connection",
+								"key": "connection",
+								"value": "keep-alive",
+								"description": "Options that are desired for the connection"
+							},
+							{
+								"name": "content-length",
+								"key": "content-length",
+								"value": "66",
+								"description": "The length of the response body in octets (8-bit bytes)"
+							},
+							{
+								"name": "content-type",
+								"key": "content-type",
+								"value": "application/json; charset=utf-8",
+								"description": "The mime type of this content"
+							},
+							{
+								"name": "date",
+								"key": "date",
+								"value": "Fri, 20 Apr 2018 04:21:16 GMT",
+								"description": "The date and time that the message was sent"
+							},
+							{
+								"name": "etag",
+								"key": "etag",
+								"value": "W/\"42-nYd/E6LGQy500op+Rvv9QQ8w6Bg\"",
+								"description": "An identifier for a specific version of a resource, often a message digest"
+							},
+							{
+								"name": "server",
+								"key": "server",
+								"value": "nginx/1.13.12",
+								"description": "A name for the server"
+							},
+							{
+								"name": "strict-transport-security",
+								"key": "strict-transport-security",
+								"value": "max-age=15552000; includeSubDomains, max-age=31536000; includeSubDomains",
+								"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+							},
+							{
+								"name": "x-content-type-options",
+								"key": "x-content-type-options",
+								"value": "nosniff",
+								"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+							},
+							{
+								"name": "x-dns-prefetch-control",
+								"key": "x-dns-prefetch-control",
+								"value": "off",
+								"description": "Custom header"
+							},
+							{
+								"name": "x-download-options",
+								"key": "x-download-options",
+								"value": "noopen",
+								"description": "Custom header"
+							},
+							{
+								"name": "x-frame-options",
+								"key": "x-frame-options",
+								"value": "SAMEORIGIN",
+								"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+							},
+							{
+								"name": "x-xss-protection",
+								"key": "x-xss-protection",
+								"value": "1; mode=block",
+								"description": "Cross-site scripting (XSS) filter"
+							}
+						],
+						"cookies": [],
+						"mime": "",
+						"text": "{\n    \"status\": 200,\n    \"message\": \"success on conect services\"\n}",
+						"language": "json",
+						"rawDataType": "text",
+						"previewType": "text",
+						"searchResultScrolledTo": -1,
+						"forceNoPretty": false,
+						"write": true,
+						"empty": false,
+						"failed": false,
+						"id": "87e406c2-77e6-1532-7337-40c057cc2c8b",
+						"name": "SUCCESS",
+						"isSample": true,
+						"scrollToResult": false,
+						"runTests": false,
+						"request": {
+							"url": "{{URL}}/health",
+							"pathVariables": {},
+							"pathVariableData": [],
+							"queryParams": [],
+							"headerData": [],
+							"headers": "",
+							"data": null,
+							"method": "GET",
+							"dataMode": "params"
+						}
+					},
+					{
+						"status": "",
+						"responseCode": {
+							"code": 500,
+							"name": "Internal Server Error",
+							"detail": "A generic error message, given when no more specific message is suitable."
+						},
+						"time": 118,
+						"headers": [
+							{
+								"name": "access-control-allow-origin",
+								"key": "access-control-allow-origin",
+								"value": "*",
+								"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+							},
+							{
+								"name": "connection",
+								"key": "connection",
+								"value": "keep-alive",
+								"description": "Options that are desired for the connection"
+							},
+							{
+								"name": "content-length",
+								"key": "content-length",
+								"value": "21",
+								"description": "The length of the response body in octets (8-bit bytes)"
+							},
+							{
+								"name": "content-type",
+								"key": "content-type",
+								"value": "text/plain; charset=utf-8",
+								"description": "The mime type of this content"
+							},
+							{
+								"name": "date",
+								"key": "date",
+								"value": "Fri, 20 Apr 2018 04:22:29 GMT",
+								"description": "The date and time that the message was sent"
+							},
+							{
+								"name": "etag",
+								"key": "etag",
+								"value": "W/\"15-/6VXivhc2MKdLfIkLcUE47K6aH0\"",
+								"description": "An identifier for a specific version of a resource, often a message digest"
+							},
+							{
+								"name": "server",
+								"key": "server",
+								"value": "nginx/1.13.12",
+								"description": "A name for the server"
+							},
+							{
+								"name": "strict-transport-security",
+								"key": "strict-transport-security",
+								"value": "max-age=15552000; includeSubDomains",
+								"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+							},
+							{
+								"name": "x-content-type-options",
+								"key": "x-content-type-options",
+								"value": "nosniff",
+								"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+							},
+							{
+								"name": "x-dns-prefetch-control",
+								"key": "x-dns-prefetch-control",
+								"value": "off",
+								"description": "Custom header"
+							},
+							{
+								"name": "x-download-options",
+								"key": "x-download-options",
+								"value": "noopen",
+								"description": "Custom header"
+							},
+							{
+								"name": "x-frame-options",
+								"key": "x-frame-options",
+								"value": "SAMEORIGIN",
+								"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+							},
+							{
+								"name": "x-xss-protection",
+								"key": "x-xss-protection",
+								"value": "1; mode=block",
+								"description": "Cross-site scripting (XSS) filter"
+							}
+						],
+						"cookies": [],
+						"mime": "",
+						"text": "Internal Server Error",
+						"language": "plainText",
+						"rawDataType": "text",
+						"previewType": "text",
+						"searchResultScrolledTo": -1,
+						"forceNoPretty": false,
+						"write": true,
+						"empty": false,
+						"failed": false,
+						"name": "{{URL}}/health ERROR IF DOWN APP",
+						"id": "1e1067ec-b21a-a718-30b5-fcb5ac2a691b",
+						"request": {
+							"url": "{{URL}}/health",
+							"pathVariables": {},
+							"pathVariableData": [],
+							"queryParams": [],
+							"headerData": [],
+							"headers": "",
+							"data": null,
+							"method": "GET",
+							"dataMode": "params"
+						}
+					},
+					{
+						"status": "",
+						"responseCode": {
+							"code": 500,
+							"name": "Internal Server Error"
+						},
+						"time": 118,
+						"headers": [
+							{
+								"name": "access-control-allow-origin",
+								"key": "access-control-allow-origin",
+								"value": "*",
+								"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+							},
+							{
+								"name": "connection",
+								"key": "connection",
+								"value": "keep-alive",
+								"description": "Options that are desired for the connection"
+							},
+							{
+								"name": "content-length",
+								"key": "content-length",
+								"value": "21",
+								"description": "The length of the response body in octets (8-bit bytes)"
+							},
+							{
+								"name": "content-type",
+								"key": "content-type",
+								"value": "text/plain; charset=utf-8",
+								"description": "The mime type of this content"
+							},
+							{
+								"name": "date",
+								"key": "date",
+								"value": "Fri, 20 Apr 2018 04:22:29 GMT",
+								"description": "The date and time that the message was sent"
+							},
+							{
+								"name": "etag",
+								"key": "etag",
+								"value": "W/\"15-/6VXivhc2MKdLfIkLcUE47K6aH0\"",
+								"description": "An identifier for a specific version of a resource, often a message digest"
+							},
+							{
+								"name": "server",
+								"key": "server",
+								"value": "nginx/1.13.12",
+								"description": "A name for the server"
+							},
+							{
+								"name": "strict-transport-security",
+								"key": "strict-transport-security",
+								"value": "max-age=15552000; includeSubDomains",
+								"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+							},
+							{
+								"name": "x-content-type-options",
+								"key": "x-content-type-options",
+								"value": "nosniff",
+								"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+							},
+							{
+								"name": "x-dns-prefetch-control",
+								"key": "x-dns-prefetch-control",
+								"value": "off",
+								"description": "Custom header"
+							},
+							{
+								"name": "x-download-options",
+								"key": "x-download-options",
+								"value": "noopen",
+								"description": "Custom header"
+							},
+							{
+								"name": "x-frame-options",
+								"key": "x-frame-options",
+								"value": "SAMEORIGIN",
+								"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+							},
+							{
+								"name": "x-xss-protection",
+								"key": "x-xss-protection",
+								"value": "1; mode=block",
+								"description": "Cross-site scripting (XSS) filter"
+							}
+						],
+						"cookies": [],
+						"mime": "",
+						"text": "Internal Server Error",
+						"language": "plainText",
+						"rawDataType": "text",
+						"previewType": "text",
+						"searchResultScrolledTo": -1,
+						"forceNoPretty": false,
+						"write": true,
+						"empty": false,
+						"failed": false,
+						"id": "969576dd-732a-8d30-db16-03ed76ff04a0",
+						"name": "ERROR IF DOWN APP",
+						"isSample": true,
+						"scrollToResult": false,
+						"runTests": false,
+						"request": {
+							"url": "{{URL}}/health",
+							"pathVariables": {},
+							"pathVariableData": [],
+							"queryParams": [],
+							"headerData": [],
+							"headers": "",
+							"data": null,
+							"method": "GET",
+							"dataMode": "params"
+						}
+					}
+				]
+			},
+			{
+				"id": "86176552-80ce-6799-29ad-f363fc7f1cb8",
+				"headers": "",
+				"headerData": [],
+				"url": "{{URL}}",
+				"queryParams": [],
+				"preRequestScript": "",
+				"pathVariables": {},
+				"pathVariableData": [],
+				"method": "GET",
+				"data": null,
+				"dataMode": "params",
+				"tests": null,
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1524198373952,
+				"name": "{{URL}}/index",
+				"description": "Rota responsável por checar status do serviço",
+				"collectionId": "777a6577-70c5-e275-b1d0-29ba5d4c4942",
+				"responses": [
+					{
+						"status": "",
+						"responseCode": {
+							"code": 200,
+							"name": "OK",
+							"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+						},
+						"time": 41,
+						"headers": [
+							{
+								"name": "access-control-allow-origin",
+								"key": "access-control-allow-origin",
+								"value": "*",
+								"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+							},
+							{
+								"name": "connection",
+								"key": "connection",
+								"value": "keep-alive",
+								"description": "Options that are desired for the connection"
+							},
+							{
+								"name": "content-length",
+								"key": "content-length",
+								"value": "31",
+								"description": "The length of the response body in octets (8-bit bytes)"
+							},
+							{
+								"name": "content-type",
+								"key": "content-type",
+								"value": "application/json; charset=utf-8",
+								"description": "The mime type of this content"
+							},
+							{
+								"name": "date",
+								"key": "date",
+								"value": "Fri, 20 Apr 2018 04:25:57 GMT",
+								"description": "The date and time that the message was sent"
+							},
+							{
+								"name": "etag",
+								"key": "etag",
+								"value": "W/\"1f-BJMGevPg4RfbXsuTo26Z/2KvCMY\"",
+								"description": "An identifier for a specific version of a resource, often a message digest"
+							},
+							{
+								"name": "server",
+								"key": "server",
+								"value": "nginx/1.13.12",
+								"description": "A name for the server"
+							},
+							{
+								"name": "strict-transport-security",
+								"key": "strict-transport-security",
+								"value": "max-age=15552000; includeSubDomains, max-age=31536000; includeSubDomains",
+								"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+							},
+							{
+								"name": "x-content-type-options",
+								"key": "x-content-type-options",
+								"value": "nosniff",
+								"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+							},
+							{
+								"name": "x-dns-prefetch-control",
+								"key": "x-dns-prefetch-control",
+								"value": "off",
+								"description": "Custom header"
+							},
+							{
+								"name": "x-download-options",
+								"key": "x-download-options",
+								"value": "noopen",
+								"description": "Custom header"
+							},
+							{
+								"name": "x-frame-options",
+								"key": "x-frame-options",
+								"value": "SAMEORIGIN",
+								"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+							},
+							{
+								"name": "x-xss-protection",
+								"key": "x-xss-protection",
+								"value": "1; mode=block",
+								"description": "Cross-site scripting (XSS) filter"
+							}
+						],
+						"cookies": [],
+						"mime": "",
+						"text": "{\n    \"status\": \"API on-line\"\n}",
+						"language": "json",
+						"rawDataType": "text",
+						"previewType": "text",
+						"searchResultScrolledTo": -1,
+						"forceNoPretty": false,
+						"write": true,
+						"empty": false,
+						"failed": false,
+						"name": "SUCCESS",
+						"id": "140f3e57-fae3-2636-1b59-43a5e803cd9f",
+						"request": {
+							"url": "{{URL}}",
+							"pathVariables": {},
+							"pathVariableData": [],
+							"queryParams": [],
+							"headerData": [],
+							"headers": "",
+							"data": null,
+							"method": "GET",
+							"dataMode": "params"
+						}
+					}
+				]
+			},
+			{
+				"id": "a29c2fe9-23db-19e1-500b-1451694b40a3",
+				"headers": "Content-Type: application/json\n",
+				"headerData": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "",
+						"enabled": true
+					}
+				],
+				"url": "{{URL}}/token",
+				"queryParams": [],
+				"preRequestScript": null,
+				"pathVariables": {},
+				"pathVariableData": [],
+				"method": "POST",
+				"data": "{\n    \"email\": \"adm@adm.com\",\n    \"password\": \"123456\"\n}",
+				"dataMode": "raw",
+				"tests": "var jsonData = JSON.parse(responseBody);\n\npostman.setEnvironmentVariable('TOKEN', `bearer ${jsonData.token}`);",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1524199078195,
+				"name": "{{URL_API}}/token",
+				"description": "Local destinado para realizar login e receber o token para uso nas demais rotas.",
+				"collectionId": "777a6577-70c5-e275-b1d0-29ba5d4c4942",
+				"responses": [
+					{
+						"status": "",
+						"responseCode": {
+							"code": 200,
+							"name": "OK"
+						},
+						"time": 342,
+						"headers": [
+							{
+								"name": "access-control-allow-origin",
+								"key": "access-control-allow-origin",
+								"value": "*",
+								"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+							},
+							{
+								"name": "connection",
+								"key": "connection",
+								"value": "keep-alive",
+								"description": "Options that are desired for the connection"
+							},
+							{
+								"name": "content-length",
+								"key": "content-length",
+								"value": "134",
+								"description": "The length of the response body in octets (8-bit bytes)"
+							},
+							{
+								"name": "content-type",
+								"key": "content-type",
+								"value": "application/json; charset=utf-8",
+								"description": "The mime type of this content"
+							},
+							{
+								"name": "date",
+								"key": "date",
+								"value": "Fri, 20 Apr 2018 03:18:46 GMT",
+								"description": "The date and time that the message was sent"
+							},
+							{
+								"name": "etag",
+								"key": "etag",
+								"value": "W/\"86-2k/uXJ9slBPJ1n1JcmRJgipaqMM\"",
+								"description": "An identifier for a specific version of a resource, often a message digest"
+							},
+							{
+								"name": "server",
+								"key": "server",
+								"value": "nginx/1.13.12",
+								"description": "A name for the server"
+							},
+							{
+								"name": "strict-transport-security",
+								"key": "strict-transport-security",
+								"value": "max-age=15552000; includeSubDomains, max-age=31536000; includeSubDomains",
+								"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+							},
+							{
+								"name": "x-content-type-options",
+								"key": "x-content-type-options",
+								"value": "nosniff",
+								"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+							},
+							{
+								"name": "x-dns-prefetch-control",
+								"key": "x-dns-prefetch-control",
+								"value": "off",
+								"description": "Custom header"
+							},
+							{
+								"name": "x-download-options",
+								"key": "x-download-options",
+								"value": "noopen",
+								"description": "Custom header"
+							},
+							{
+								"name": "x-frame-options",
+								"key": "x-frame-options",
+								"value": "SAMEORIGIN",
+								"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+							},
+							{
+								"name": "x-xss-protection",
+								"key": "x-xss-protection",
+								"value": "1; mode=block",
+								"description": "Cross-site scripting (XSS) filter"
+							}
+						],
+						"cookies": [],
+						"mime": "",
+						"text": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTI0MTk0MzI2fQ.n7dUZ-cOSJ9hE8n0CSVWC6FNLs52HVtu-POrp9lxK2g\"\n}",
+						"language": "json",
+						"rawDataType": "text",
+						"previewType": "text",
+						"searchResultScrolledTo": -1,
+						"forceNoPretty": false,
+						"write": true,
+						"empty": false,
+						"failed": false,
+						"id": "3d09b62a-360a-d4f4-c42d-a0f8a4187453",
+						"name": "SUCCESS",
+						"isSample": true,
+						"scrollToResult": false,
+						"runTests": false,
+						"request": {
+							"url": "{{URL}}/token",
+							"pathVariables": {},
+							"pathVariableData": [],
+							"queryParams": [],
+							"headerData": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"enabled": true,
+									"description": ""
+								}
+							],
+							"headers": "Content-Type: application/json\n",
+							"data": "{\n    \"email\": \"adm@adm.com\",\n    \"password\": \"123456\"\n}",
+							"method": "POST",
+							"dataMode": "raw"
+						}
+					},
+					{
+						"status": "",
+						"responseCode": {
+							"code": 401,
+							"name": "Unauthorized"
+						},
+						"time": 235,
+						"headers": [
+							{
+								"name": "access-control-allow-origin",
+								"key": "access-control-allow-origin",
+								"value": "*",
+								"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+							},
+							{
+								"name": "connection",
+								"key": "connection",
+								"value": "keep-alive",
+								"description": "Options that are desired for the connection"
+							},
+							{
+								"name": "content-length",
+								"key": "content-length",
+								"value": "12",
+								"description": "The length of the response body in octets (8-bit bytes)"
+							},
+							{
+								"name": "content-type",
+								"key": "content-type",
+								"value": "text/plain; charset=utf-8",
+								"description": "The mime type of this content"
+							},
+							{
+								"name": "date",
+								"key": "date",
+								"value": "Fri, 20 Apr 2018 03:20:57 GMT",
+								"description": "The date and time that the message was sent"
+							},
+							{
+								"name": "etag",
+								"key": "etag",
+								"value": "W/\"c-dAuDFQrdjS3hezqxDTNgW7AOlYk\"",
+								"description": "An identifier for a specific version of a resource, often a message digest"
+							},
+							{
+								"name": "server",
+								"key": "server",
+								"value": "nginx/1.13.12",
+								"description": "A name for the server"
+							},
+							{
+								"name": "strict-transport-security",
+								"key": "strict-transport-security",
+								"value": "max-age=15552000; includeSubDomains",
+								"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+							},
+							{
+								"name": "x-content-type-options",
+								"key": "x-content-type-options",
+								"value": "nosniff",
+								"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+							},
+							{
+								"name": "x-dns-prefetch-control",
+								"key": "x-dns-prefetch-control",
+								"value": "off",
+								"description": "Custom header"
+							},
+							{
+								"name": "x-download-options",
+								"key": "x-download-options",
+								"value": "noopen",
+								"description": "Custom header"
+							},
+							{
+								"name": "x-frame-options",
+								"key": "x-frame-options",
+								"value": "SAMEORIGIN",
+								"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+							},
+							{
+								"name": "x-xss-protection",
+								"key": "x-xss-protection",
+								"value": "1; mode=block",
+								"description": "Cross-site scripting (XSS) filter"
+							}
+						],
+						"cookies": [],
+						"mime": "",
+						"text": "Unauthorized",
+						"language": "plainText",
+						"rawDataType": "text",
+						"previewType": "text",
+						"searchResultScrolledTo": -1,
+						"forceNoPretty": false,
+						"write": true,
+						"empty": false,
+						"failed": false,
+						"id": "f8e333f0-2c01-38de-5b37-8f169afc12c3",
+						"name": "UNAUTHORIZED",
+						"isSample": true,
+						"scrollToResult": false,
+						"runTests": false,
+						"request": {
+							"url": "{{URL}}/token",
+							"pathVariables": {},
+							"pathVariableData": [],
+							"queryParams": [],
+							"headerData": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"enabled": true,
+									"description": ""
+								}
+							],
+							"headers": "Content-Type: application/json\n",
+							"data": "{\n    \"email\": \"adm@adm.com\",\n    \"password\": \"err\"\n}",
+							"method": "POST",
+							"dataMode": "raw"
+						}
+					}
+				]
+			}
+		],
+		"timestamp": 1524031840001,
+		"synced": false,
+		"syncedFilename": "",
+		"remote_id": 0,
+		"remoteLink": "",
+		"remoteLinkUpdatedAt": null,
+		"public": false,
+		"owner": "2513877",
+		"subscribed": false,
+		"createdAt": 1524031840001,
+		"updatedAt": 1524198385807,
+		"write": true,
+		"published": false,
+		"favorite": false,
+		"permissions": {},
+		"syncedPermissions": {},
+		"sharedWithTeam": false
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [],
+	"results": [
+		{
+			"id": "a29c2fe9-23db-19e1-500b-1451694b40a3",
+			"name": "{{URL_API}}/token",
+			"url": "{{URL}}/token",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				654
+			],
+			"allTests": [
+				{}
+			],
+			"time": 654,
+			"totalRequestTime": 654,
+			"iterationResults": {}
+		},
+		{
+			"id": "591a6ccd-b89b-c6fa-2601-5ff6bcb32b23",
+			"name": "{{URL}}/user",
+			"url": "{{URL}}/user",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				126
+			],
+			"allTests": [
+				{}
+			],
+			"time": 126,
+			"totalRequestTime": 126,
+			"iterationResults": {}
+		},
+		{
+			"id": "83c38a7b-ae69-5e85-553f-a5317a699f2d",
+			"name": "{{URL}}/health",
+			"url": "{{URL}}/health",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				22
+			],
+			"allTests": [
+				{}
+			],
+			"time": 22,
+			"totalRequestTime": 22,
+			"iterationResults": {}
+		},
+		{
+			"id": "86176552-80ce-6799-29ad-f363fc7f1cb8",
+			"name": "{{URL}}/index",
+			"url": "{{URL}}",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				55
+			],
+			"allTests": [
+				{}
+			],
+			"time": 55,
+			"totalRequestTime": 55,
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 0,
+	"totalFail": 0,
+	"totalTime": 857,
+	"lifecycle": "done",
+	"willStop": false,
+	"requests": [
+		{
+			"name": "{{URL_API}}/token",
+			"id": "a29c2fe9-23db-19e1-500b-1451694b40a3",
+			"url": "{{URL}}/token",
+			"time": 654,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "{{URL}}/user",
+			"id": "591a6ccd-b89b-c6fa-2601-5ff6bcb32b23",
+			"url": "{{URL}}/user",
+			"time": 126,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "{{URL}}/health",
+			"id": "83c38a7b-ae69-5e85-553f-a5317a699f2d",
+			"url": "{{URL}}/health",
+			"time": 22,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "{{URL}}/index",
+			"id": "86176552-80ce-6799-29ad-f363fc7f1cb8",
+			"url": "{{URL}}",
+			"time": 55,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		}
+	],
+	"synced": false
+}
