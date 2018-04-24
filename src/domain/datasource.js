@@ -41,12 +41,8 @@ module.exports = (app) => {
   )
 
   sequelize.authenticate()
-    .then(() => {
-      app.logger.info('Connection has been established successfully.')
-    })
-    .catch(err => {
-      app.logger.error('Unable to connect to the database:', err)
-    })
+    .then(() => app.logger.info('Connection has been established successfully.'))
+    .catch(err => app.logger.error('Unable to connect to the database:', err))
 
   datasource = {
     sequelize,
