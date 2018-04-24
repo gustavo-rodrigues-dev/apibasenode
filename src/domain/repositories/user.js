@@ -1,5 +1,3 @@
-import { resolve } from 'url'
-
 module.exports = (app) => {
   const UserModel = app.domain.datasource.models.user
 
