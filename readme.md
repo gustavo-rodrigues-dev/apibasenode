@@ -1,6 +1,7 @@
 # API Boilerplate
 [![Build Status](https://travis-ci.org/gustavobeavis/apibasenode.svg?branch=master)](https://travis-ci.org/gustavobeavis/apibasenode)
 [![Coverage Status](https://coveralls.io/repos/github/gustavobeavis/apibasenode/badge.svg?branch=master)](https://coveralls.io/github/gustavobeavis/apibasenode?branch=master)
+[![codebeat badge](https://codebeat.co/badges/f5c34f34-2eae-4146-b95f-ed7a9c39284a)](https://codebeat.co/projects/github-com-gustavobeavis-apibasenode-master)
 [![Daviid Dependencies](https://david-dm.org/gustavobeavis/apibasenode.svg)](https://david-dm.org/gustavobeavis/apibasenode)
 [![Daviid Dependencies](https://david-dm.org/gustavobeavis/apibasenode/dev-status.svg)](https://david-dm.org/gustavobeavis/apibasenode?type=dev)
 [![Known Vulnerabilities](https://snyk.io/test/github/gustavobeavis/apibasenode/badge.svg?targetFile=package.json)](https://snyk.io/test/github/gustavobeavis/apibasenode?targetFile=package.json)
