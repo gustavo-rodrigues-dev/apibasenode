@@ -1,12 +1,12 @@
 # API Boilerplate
 
-[![Join the chat at https://gitter.im/ODDExpressBoilerplate/Lobby](https://badges.gitter.im/ODDExpressBoilerplate/Lobby.svg)](https://gitter.im/ODDExpressBoilerplate/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/gustavobeavis/apibasenode.svg?branch=master)](https://travis-ci.org/gustavobeavis/apibasenode)
 [![Coverage Status](https://coveralls.io/repos/github/gustavobeavis/apibasenode/badge.svg?branch=master)](https://coveralls.io/github/gustavobeavis/apibasenode?branch=master)
 [![codebeat badge](https://codebeat.co/badges/f5c34f34-2eae-4146-b95f-ed7a9c39284a)](https://codebeat.co/projects/github-com-gustavobeavis-apibasenode-master)
 [![Daviid Dependencies](https://david-dm.org/gustavobeavis/apibasenode.svg)](https://david-dm.org/gustavobeavis/apibasenode)
 [![Daviid Dependencies](https://david-dm.org/gustavobeavis/apibasenode/dev-status.svg)](https://david-dm.org/gustavobeavis/apibasenode?type=dev)
 [![Known Vulnerabilities](https://snyk.io/test/github/gustavobeavis/apibasenode/badge.svg?targetFile=package.json)](https://snyk.io/test/github/gustavobeavis/apibasenode?targetFile=package.json)
+[![Join the chat at https://gitter.im/ODDExpressBoilerplate/Lobby](https://badges.gitter.im/ODDExpressBoilerplate/Lobby.svg)](https://gitter.im/ODDExpressBoilerplate/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Esse projeto consiste em estandarizar algumas das melhores praticas de design de projeto relacionados a API REST, onde o propósito é reforçar a divisão de responsabilidades de sistema, dividindo-os em sessões responsáveis por cada escopo, de modo que se melhores a manutenciabilidade e também se repita menos código. Em uma visão geral, esse bilerplate tem o intuíto de prover um projeto basico respeitando os principios de qualidade e de divisão de responábilidades da aplicação, além de testes unitários e de integração.
 
