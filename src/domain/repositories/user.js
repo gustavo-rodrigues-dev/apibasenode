@@ -19,18 +19,16 @@ module.exports = (app) => {
     }
 
     static validateUser (user, password) {
-      return new Promise((resolve, reject) => {
-        if (!user) {
-          app.logger.error('user invalid')
-          return reject(new Error('user invalid'))
-        }
-        if (!UserModel.isPassword(user.password, password)) {
-          app.logger.error('password invalid')
-          return reject(new Error('password invalid'))
-        }
+      if (!user) {
+        app.logger.error('user invalid')
+        return new Error('user invalid')
+      }
+      if (!UserModel.isPassword(user.password, password)) {
+        app.logger.error('password invalid')
+        return new Error('password invalid')
+      }
 
-        return resolve({ id: user.id })
-      })
+      return { id: user.id }
     }
 
     static login (email, password) {
