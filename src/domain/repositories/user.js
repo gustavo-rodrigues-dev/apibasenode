@@ -1,4 +1,4 @@
-module.exports = (app) => {
+module.exports = app => {
   const UserModel = app.domain.datasource.models.user
 
   class UserRepository {
@@ -6,16 +6,15 @@ module.exports = (app) => {
       return UserModel
     }
 
-    static getUserAuth (user, done) {
-      return UserModel.findById(user.id)
-        .then(user => {
-          if (user) {
-            return done(null, user)
-          }
+    static async getUserAuth (user, done) {
+      let response = null
 
-          return done(null, false)
-        })
-        .catch(err => done(err, null))
+      try {
+        response = await UserModel.findById(user.id)
+        done(null, response)
+      } catch (error) {
+        done(error, false)
+      }
     }
 
     static validateUser (user, password) {
@@ -31,42 +30,31 @@ module.exports = (app) => {
       return { id: user.id }
     }
 
-    static login (email, password) {
-      return UserModel.findOne({
-        where: {
-          email
-        }
-      })
-        .then(user => this.validateUser(user, password))
+    static async login (email, password) {
+      let user = null
+
+      try {
+        user = await UserModel.findOne({
+          where: {
+            email
+          }
+        })
+
+        return this.validateUser(user, password)
+      } catch (e) {
+        return false
+      }
     }
 
-    static getById (id) {
-      return UserModel.findOne({
+    static async getById (id) {
+      let user = await UserModel.findOne({
         attributes: ['name', 'email'],
         where: {
           id: id
         }
       })
-    }
 
-    static create (name, email, password) {
-      return UserModel.findOrCreate({
-        where: {
-          name: name,
-          email: email
-        },
-        defaults: {
-          name: name,
-          email: email,
-          password: password
-        }
-      }).spread((user, created) => {
-        if (created) {
-          throw new Error('User exists')
-        }
-
-        return user
-      })
+      return user
     }
   }
 
