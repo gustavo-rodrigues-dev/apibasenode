@@ -1,6 +1,5 @@
 module.exports = app => {
   const UserModel = app.domain.datasource.models.user
-
   class UserRepository {
     static getModel () {
       return UserModel
@@ -19,11 +18,9 @@ module.exports = app => {
 
     static validateUser (user, password) {
       if (!user) {
-        app.logger.error('user invalid')
         return new Error('user invalid')
       }
       if (!UserModel.isPassword(user.password, password)) {
-        app.logger.error('password invalid')
         return new Error('password invalid')
       }
 
