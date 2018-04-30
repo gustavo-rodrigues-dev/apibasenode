@@ -1,7 +1,8 @@
 module.exports = app => {
   class HealthController {
-    static liveness (req, res) {
-      app.domain.datasource.sequelize.authenticate().then(() => {
+    static async liveness (req, res, next) {
+      try {
+        await app.domain.datasource.sequelize.authenticate()
         app.logger.info(
           'Connection services has been established successfully.'
         )
@@ -9,7 +10,9 @@ module.exports = app => {
           status: 200,
           message: 'success on conect services'
         })
-      })
+      } catch (error) {
+        return next(error)
+      }
     }
   }
 
