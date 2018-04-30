@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken'
-module.exports = (app) => {
+module.exports = app => {
   const UserRepository = app.domain.repositories.user
   class UserController {
     static login (req, res) {
@@ -12,11 +12,9 @@ module.exports = (app) => {
 
       return UserRepository.login(email, password)
         .then(payload => {
-          return res
-            .status(200)
-            .json({
-              token: jwt.sign(payload, app.config.secret)
-            })
+          return res.status(200).json({
+            token: jwt.sign(payload, app.config.secret)
+          })
         })
         .catch(error => {
           app.logger.warn('Invalid user', error)
@@ -24,13 +22,14 @@ module.exports = (app) => {
         })
     }
 
-    static getMyInfo (req, res) {
-      return UserRepository.getById(req.user.id)
-        .then(user => {
-          return res
-            .status(200)
-            .json(user)
-        })
+    static async getMyInfo (req, res) {
+      let user = null
+      try {
+        user = await UserRepository.getById(req.user.id)
+        return res.status(200).json(user)
+      } catch (e) {
+        res.status(500)
+      }
     }
   }
 

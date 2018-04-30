@@ -1,5 +1,5 @@
 /* global  describe,before,app,beforeEach,afterEach,it,request,assert */
-import { createUser, emptyUsers, invalidateTable, validateTable } from '../fixtures/user.fixture'
+import { createUser, emptyUsers } from '../fixtures/user.fixture'
 import jwt from 'jsonwebtoken'
 
 describe('User route', () => {
@@ -28,7 +28,8 @@ describe('User route', () => {
       email: 'test@test.com'
     }
 
-    request.get('/user')
+    request
+      .get('/user')
       .set('Authorization', `bearer ${token}`)
       .expect(200)
       .end((err, res) => {
@@ -38,22 +39,10 @@ describe('User route', () => {
   })
 
   it('should return Unauthorized to invalid token', done => {
-    request.get('/user')
+    request
+      .get('/user')
       .set('Authorization', `bearer invalid`)
       .expect(401)
       .end(err => done(err))
-  })
-
-  it('should return error when database out', done => {
-    invalidateTable().then(() => {
-      request.get('/user')
-        .set('Authorization', `bearer ${token}`)
-        .expect(500)
-        .end(err => {
-          validateTable().then(() => {
-            done(err)
-          })
-        })
-    })
   })
 })
