@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   nginx:
-    image: nginx:latest@sha256:80e2f223b2a53cfcf3fd491521e5fb9b4004d42dfc391c76011bcdd9565643df
+    image: nginx:latest@sha256:0edf702c890e9518b95b2da01286509cd437eb994b8d22460e40d72f6b79be49
     ports:
       - 8080:8080
     restart: always
