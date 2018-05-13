@@ -97,6 +97,6 @@
     "nyc": "11.7.3",
     "pm2": "2.10.3",
     "sequelize-cli": "4.0.0",
-    "supertest": "3.0.0"
+    "supertest": "3.1.0"
   }
 }
