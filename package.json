@@ -94,7 +94,7 @@
     "eslint-plugin-standard": "3.1.0",
     "istanbul": "0.4.5",
     "mocha": "5.1.1",
-    "nyc": "11.7.3",
+    "nyc": "11.8.0",
     "pm2": "2.10.3",
     "sequelize-cli": "4.0.0",
     "supertest": "3.1.0"
