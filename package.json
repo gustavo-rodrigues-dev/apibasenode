@@ -93,7 +93,7 @@
     "eslint-plugin-promise": "3.7.0",
     "eslint-plugin-standard": "3.1.0",
     "istanbul": "0.4.5",
-    "mocha": "5.1.1",
+    "mocha": "5.2.0",
     "nyc": "11.8.0",
     "pm2": "2.10.4",
     "sequelize-cli": "4.0.0",
