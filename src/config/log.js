@@ -1,14 +1,14 @@
-import winston from 'winston'
+import { createLogger, transports } from 'winston'
 
 module.exports = (config) => {
   const debugTransports = [
-    new (winston.transports.File)({ filename: './log/error.log', level: 'error' }),
-    new (winston.transports.Console)({
+    new (transports.File)({ filename: './log/error.log', level: 'error' }),
+    new (transports.Console)({
       colorize: true
     })
   ]
 
-  const logger = new (winston.Logger)({
+  const logger = createLogger({
     level: config.debug.level,
     transports: debugTransports
   })
