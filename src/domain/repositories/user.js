@@ -1,7 +1,6 @@
 module.exports = app => {
   const UserModel = app.domain.datasource.models.user
   class UserRepository {
-
     static async getUserAuth (user, done) {
       let response = null
 
