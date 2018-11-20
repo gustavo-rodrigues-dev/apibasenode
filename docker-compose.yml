@@ -34,7 +34,7 @@ services:
       - postgres
     restart: always
   postgres:
-    image: postgres:latest@sha256:73d065c344b419ce97bba953c7887c7deead75e0998053518938231cd7beb22c
+    image: postgres:latest@sha256:40b48cf04185e69c5a9183a986fcbbfd105e5991a70b1980e9a641b53ba5ead7
     ports:
       - "5432:5432"
     environment:
