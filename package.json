@@ -38,7 +38,9 @@
     "clean": "rm -f package-lock.json; rm -rf node_modules",
     "clean:build": "rm -rf dist/",
     "lint": "eslint src/**/**/*.js src/**/*.js src/*.js  database/**/*.js test/**/**/*.js test/*.js",
-    "lint:fix": "eslint src/**/**/*.js src/**/*.js src/*.js  database/**/*.js test/**/**/*.js test/*.js --fix"
+    "lint:fix": "eslint src/**/**/*.js src/**/*.js src/*.js  database/**/*.js test/**/**/*.js test/*.js --fix",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "nyc": {
     "exclude": [
@@ -73,7 +75,8 @@
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.22.11",
     "sqlite3": "^4.0.0",
-    "winston": "^3.0.0"
+    "winston": "^3.0.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "apidoc": "0.17.6",
@@ -98,5 +101,6 @@
     "pm2": "3.1.2",
     "sequelize-cli": "4.1.1",
     "supertest": "3.3.0"
-  }
+  },
+  "snyk": true
 }
