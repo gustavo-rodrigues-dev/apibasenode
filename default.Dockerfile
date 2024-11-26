@@ -1,4 +1,4 @@
-FROM node:8.9
+FROM node:8.17
 ## ARGS ##
 ARG app_env=development
 ARG app_port=3000
